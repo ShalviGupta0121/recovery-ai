@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-app-gradient font-sans text-slate-100 antialiased;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(34, 211, 238, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(13, 148, 136, 0.12), transparent 24%);
+}
+
+#root {
+  @apply relative z-10 min-h-screen;
+}
+
+.glass-panel {
+  @apply rounded-[28px] border border-white/10 bg-[#102847]/90 shadow-card;
+}
+
+.metric-card {
+  @apply rounded-2xl border border-white/10 bg-[#0c203d] p-4;
+}
+
+.metric-panel {
+  @apply rounded-[24px] border p-5;
+}
+
+.icon-chip {
+  @apply flex h-11 w-11 items-center justify-center rounded-2xl ring-1;
+}
+
+.status-pill {
+  @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium ring-1;
+}
+
+.eyebrow {
+  @apply text-xs uppercase tracking-[0.28em] text-slate-500;
+}

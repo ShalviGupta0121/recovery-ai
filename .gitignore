@@ -1,0 +1,16 @@
+node_modules/
+dist/
+
+*.log
+*.out
+*.err
+
+edge-profile/
+edge-shot*.png
+dom-dump.txt
+
+.env
+.env.*
+
+.DS_Store
+Thumbs.db
