@@ -25,8 +25,8 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 15% 10%, rgba(34, 211, 238, 0.12), transparent 28%),
-    radial-gradient(circle at 85% 20%, rgba(13, 148, 136, 0.12), transparent 24%);
+    radial-gradient(circle at 18% 10%, rgba(88, 179, 161, 0.08), transparent 26%),
+    radial-gradient(circle at 86% 18%, rgba(92, 132, 178, 0.08), transparent 24%);
 }
 
 #root {
@@ -34,15 +34,16 @@ body::before {
 }
 
 .glass-panel {
-  @apply rounded-[28px] border border-white/10 bg-[#102847]/90 shadow-card;
+  @apply rounded-[28px] border border-white/10 bg-[#1a212c]/90 shadow-card;
+  backdrop-filter: blur(18px);
 }
 
 .metric-card {
-  @apply rounded-2xl border border-white/10 bg-[#0c203d] p-4;
+  @apply rounded-2xl border border-white/10 bg-[#121821] p-4;
 }
 
 .metric-panel {
-  @apply rounded-[24px] border p-5;
+  @apply rounded-[24px] border border-white/10 bg-white/[0.025] p-5;
 }
 
 .icon-chip {
@@ -55,4 +56,25 @@ body::before {
 
 .eyebrow {
   @apply text-xs uppercase tracking-[0.28em] text-slate-500;
+}
+
+.primary-action {
+  @apply inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-medium text-white transition;
+  border: 1px solid rgba(88, 179, 161, 0.25);
+  background-color: rgba(88, 179, 161, 0.12);
+}
+
+.secondary-action {
+  @apply inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-medium text-slate-100 transition;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.primary-action:hover {
+  border-color: rgba(88, 179, 161, 0.35);
+  background-color: rgba(88, 179, 161, 0.18);
+}
+
+.secondary-action:hover {
+  background-color: rgba(255, 255, 255, 0.06);
 }

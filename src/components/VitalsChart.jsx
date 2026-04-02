@@ -13,22 +13,22 @@ import { metricTone } from "../lib/format";
 const configs = {
   heartRate: {
     label: "Heart Rate",
-    color: "#22d3ee",
+    color: "#6f92c7",
     unit: "bpm",
     domain: [50, 130],
     threshold: 110
   },
   spo2: {
     label: "SpO2",
-    color: "#34d399",
+    color: "#58b3a1",
     unit: "%",
     domain: [85, 100],
     threshold: 92
   },
   temperature: {
     label: "Temperature",
-    color: "#fbbf24",
-    unit: "°C",
+    color: "#d4a45b",
+    unit: "\u00B0C",
     domain: [36, 39.5],
     threshold: 38
   }
@@ -80,15 +80,15 @@ export default function VitalsChart({ data, metric, detailed = false }) {
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "#08172e",
-                borderColor: "rgba(148, 163, 184, 0.12)",
+                backgroundColor: "#171d27",
+                borderColor: "rgba(148, 163, 184, 0.14)",
                 borderRadius: "16px"
               }}
               formatter={(value) => [`${value} ${config.unit}`, config.label]}
             />
             <ReferenceLine
               y={config.threshold}
-              stroke="rgba(244, 99, 99, 0.45)"
+              stroke="rgba(205, 109, 103, 0.5)"
               strokeDasharray="4 4"
             />
             <Line

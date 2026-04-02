@@ -24,7 +24,7 @@ export default function PageHeader({
 
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         {typeof search === "string" && typeof onSearch === "function" ? (
-          <label className="flex min-w-[260px] items-center gap-3 rounded-2xl border border-white/10 bg-slate-950/35 px-4 py-3 text-sm text-slate-300">
+          <label className="flex min-w-[260px] items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-300">
             <Search size={16} />
             <input
               value={search}
@@ -38,7 +38,7 @@ export default function PageHeader({
         )}
 
         <div className="flex flex-col gap-3 md:flex-row">
-          <div className="flex items-center gap-3 rounded-2xl border border-safe/20 bg-safe/10 px-4 py-3">
+          <div className="flex items-center gap-3 rounded-2xl border border-safe/20 bg-safe/[0.08] px-4 py-3">
             <Activity size={16} className="text-safe" />
             <div>
               <p className="text-sm font-medium text-safe">Live monitoring active</p>
@@ -48,7 +48,7 @@ export default function PageHeader({
             </div>
           </div>
 
-          <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-950/35 px-4 py-3">
+          <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
             <BellRing size={16} className="text-warning" />
             <div>
               <p className="text-sm font-medium text-white">Recent alerts</p>

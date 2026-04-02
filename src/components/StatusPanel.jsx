@@ -29,9 +29,9 @@ export default function StatusPanel({ patient, compact = false }) {
         </span>
       </div>
 
-      <div className="mt-6 rounded-[28px] border border-white/10 bg-slate-950/35 p-5">
+      <div className="mt-6 rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
         <div className="flex items-center gap-3">
-          <div className="icon-chip bg-white/5 text-white ring-white/10">
+          <div className="icon-chip bg-teal/10 text-white ring-white/10">
             <Icon size={20} className="text-teal" />
           </div>
           <div>
@@ -51,7 +51,9 @@ export default function StatusPanel({ patient, compact = false }) {
           </div>
           <div className="metric-card">
             <p className="text-xs uppercase tracking-[0.18em] text-slate-500">Temperature</p>
-            <p className="mt-3 text-xl font-semibold text-white">{patient.current.temperature}°C</p>
+            <p className="mt-3 text-xl font-semibold text-white">
+              {patient.current.temperature}&deg;C
+            </p>
           </div>
         </div>
 

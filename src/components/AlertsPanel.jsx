@@ -23,13 +23,13 @@ export default function AlertsPanel({
       <div className="space-y-3">
         {alerts.length ? (
           alerts.map((alert) => (
-            <div
-              key={alert.id}
-              className="rounded-2xl border border-white/10 bg-slate-950/30 p-4"
-            >
+            <div key={alert.id} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <Link to={`/patients/${alert.patientId}`} className="font-medium text-white hover:text-teal">
+                  <Link
+                    to={`/patients/${alert.patientId}`}
+                    className="font-medium text-white transition hover:text-teal"
+                  >
                     {alert.patientName}
                     {alert.room ? <span className="text-slate-500"> | {alert.room}</span> : null}
                   </Link>
@@ -47,7 +47,7 @@ export default function AlertsPanel({
             </div>
           ))
         ) : (
-          <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5 text-sm text-slate-400">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm text-slate-400">
             No alerts yet. The stream will surface watch and high-risk events automatically.
           </div>
         )}

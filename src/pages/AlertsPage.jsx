@@ -20,7 +20,8 @@ export default function AlertsPage() {
   }, [alerts, filter]);
 
   const highlightedAlert = filteredAlerts[0] ?? null;
-  const highlightedPatient = patients.find((patient) => patient.id === highlightedAlert?.patientId) ?? null;
+  const highlightedPatient =
+    patients.find((patient) => patient.id === highlightedAlert?.patientId) ?? null;
   const criticalCount = alerts.filter((alert) => alert.severity === "Critical").length;
   const watchCount = alerts.filter((alert) => alert.severity === "Watch").length;
   const affectedPatients = new Set(alerts.map((alert) => alert.patientId)).size;
@@ -53,8 +54,8 @@ export default function AlertsPage() {
                 onClick={() => setFilter(item.key)}
                 className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
                   filter === item.key
-                    ? "bg-teal text-navy"
-                    : "border border-white/10 bg-slate-950/35 text-slate-200 hover:bg-white/5"
+                    ? "border border-teal/25 bg-teal/12 text-white"
+                    : "border border-white/10 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06]"
                 }`}
               >
                 {item.label}
@@ -91,7 +92,7 @@ export default function AlertsPage() {
             <p className="eyebrow">Highlighted Alert</p>
             {highlightedAlert ? (
               <div className="mt-4 space-y-4">
-                <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-lg font-semibold text-white">{highlightedAlert.patientName}</p>
                   <p className="mt-2 text-sm leading-7 text-slate-300">{highlightedAlert.issue}</p>
                   <p className="mt-3 text-xs uppercase tracking-[0.18em] text-slate-500">
@@ -100,18 +101,19 @@ export default function AlertsPage() {
                 </div>
 
                 {highlightedPatient ? (
-                  <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                     <p className="text-sm text-slate-400">Current patient status</p>
                     <p className="mt-2 text-xl font-semibold text-white">
                       {highlightedPatient.status.level}
                     </p>
                     <p className="mt-3 text-sm text-slate-300">
-                      HR {highlightedPatient.current.heartRate} bpm | SpO2 {highlightedPatient.current.spo2}% |
-                      Temp {highlightedPatient.current.temperature}°C
+                      HR {highlightedPatient.current.heartRate} bpm | SpO2{" "}
+                      {highlightedPatient.current.spo2}% | Temp{" "}
+                      {highlightedPatient.current.temperature}&deg;C
                     </p>
                     <Link
                       to={`/patients/${highlightedPatient.id}`}
-                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal"
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition hover:text-white"
                     >
                       Open patient detail
                     </Link>
@@ -126,8 +128,14 @@ export default function AlertsPage() {
           <div className="glass-panel p-5 md:p-6">
             <p className="eyebrow">Response Logic</p>
             <div className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
-              <p>Critical alerts are triggered when SpO2 drops below 92%, heart rate rises above 110 bpm, or temperature exceeds 38°C.</p>
-              <p>Watch alerts surface earlier drift so care teams can inspect a patient before the threshold becomes high risk.</p>
+              <p>
+                Critical alerts are triggered when SpO2 drops below 92%, heart rate rises above
+                110 bpm, or temperature exceeds 38&deg;C.
+              </p>
+              <p>
+                Watch alerts surface earlier drift so care teams can inspect a patient before the
+                threshold becomes high risk.
+              </p>
             </div>
           </div>
         </div>

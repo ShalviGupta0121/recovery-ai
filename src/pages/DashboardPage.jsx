@@ -75,13 +75,13 @@ export default function DashboardPage() {
           <>
             <Link
               to="/patients"
-              className="inline-flex items-center gap-2 rounded-2xl bg-teal px-5 py-3 text-sm font-medium text-navy transition hover:brightness-110"
+              className="primary-action"
             >
               Open Patients <ArrowRight size={16} />
             </Link>
             <Link
               to="/alerts"
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+              className="secondary-action"
             >
               Open Alerts <ArrowRight size={16} />
             </Link>
@@ -125,7 +125,7 @@ export default function DashboardPage() {
                 <p className="eyebrow">Watchlist</p>
                 <h2 className="mt-2 text-2xl font-semibold text-white">Patients needing attention</h2>
               </div>
-              <Link to="/patients" className="text-sm font-medium text-teal">
+              <Link to="/patients" className="text-sm font-medium text-teal transition hover:text-white">
                 View all patients
               </Link>
             </div>
@@ -148,7 +148,7 @@ export default function DashboardPage() {
                 <p className="eyebrow">Alert Feed</p>
                 <h2 className="mt-2 text-2xl font-semibold text-white">Recent escalations</h2>
               </div>
-              <Link to="/alerts" className="text-sm font-medium text-teal">
+              <Link to="/alerts" className="text-sm font-medium text-teal transition hover:text-white">
                 View all alerts
               </Link>
             </div>
@@ -158,7 +158,7 @@ export default function DashboardPage() {
                 <Link
                   key={alert.id}
                   to={`/patients/${alert.patientId}`}
-                  className="block rounded-2xl border border-white/10 bg-slate-950/30 p-4 transition hover:border-teal/30 hover:bg-slate-950/45"
+                  className="block rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-teal/25 hover:bg-white/[0.05]"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -192,7 +192,10 @@ export default function DashboardPage() {
                 {selectedPatient.name} telemetry
               </h2>
             </div>
-            <Link to={`/patients/${selectedPatient.id}`} className="text-sm font-medium text-teal">
+            <Link
+              to={`/patients/${selectedPatient.id}`}
+              className="text-sm font-medium text-teal transition hover:text-white"
+            >
               Open patient detail
             </Link>
           </div>

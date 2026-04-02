@@ -1,16 +1,10 @@
 import { NavLink } from "react-router-dom";
 import BrandSidebar from "./BrandSidebar";
-import ToastStack from "./ToastStack";
-import { useMonitoringData } from "../context/MonitoringContext";
 import { navigationItems } from "../lib/navigation";
 
 export default function AppShell({ children }) {
-  const { freshAlerts } = useMonitoringData();
-
   return (
     <main className="min-h-screen px-4 py-4 md:px-6 md:py-6">
-      <ToastStack alerts={freshAlerts} />
-
       <div className="mx-auto flex max-w-[1600px] gap-6">
         <BrandSidebar />
 
@@ -22,7 +16,9 @@ export default function AppShell({ children }) {
                 to={item.to}
                 className={({ isActive }) =>
                   `inline-flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition ${
-                    isActive ? "bg-teal text-navy" : "text-slate-300 hover:bg-white/5 hover:text-white"
+                    isActive
+                      ? "border border-teal/25 bg-teal/12 text-white"
+                      : "text-slate-300 hover:bg-white/[0.05] hover:text-white"
                   }`
                 }
               >

@@ -4,20 +4,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: "#0B1F3A",
-        teal: "#00C2A8",
-        safe: "#46C789",
-        warning: "#F4B740",
-        critical: "#E25858",
-        surface: "#102847",
-        panel: "#122D52"
+        navy: "#161B23",
+        teal: "#58B3A1",
+        safe: "#7BC59D",
+        warning: "#D4A45B",
+        critical: "#CD6D67",
+        surface: "#202732",
+        panel: "#2A3442"
       },
       boxShadow: {
-        card: "0 20px 45px rgba(5, 15, 31, 0.18)"
+        card: "0 24px 60px rgba(5, 9, 14, 0.36)"
       },
       backgroundImage: {
         "app-gradient":
-          "radial-gradient(circle at top, rgba(0,194,168,0.14), transparent 28%), linear-gradient(180deg, #08172e 0%, #0d2342 100%)"
+          "radial-gradient(circle at 12% 10%, rgba(88,179,161,0.11), transparent 24%), radial-gradient(circle at 82% 14%, rgba(92,132,178,0.09), transparent 24%), linear-gradient(180deg, #0c1117 0%, #161d27 54%, #10161e 100%)"
       },
       fontFamily: {
         sans: ["Manrope", "Poppins", "system-ui", "sans-serif"]

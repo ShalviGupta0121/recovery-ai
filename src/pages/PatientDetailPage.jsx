@@ -20,7 +20,7 @@ export default function PatientDetailPage() {
       <AppShell>
         <div className="glass-panel max-w-lg p-8 text-center">
           <p className="text-lg font-semibold text-white">{error}</p>
-          <Link to="/patients" className="mt-4 inline-flex text-teal">
+          <Link to="/patients" className="mt-4 inline-flex text-teal transition hover:text-white">
             Return to patients
           </Link>
         </div>
@@ -46,10 +46,7 @@ export default function PatientDetailPage() {
         generatedAt={generatedAt}
         alertCount={alerts.length}
         actions={
-          <Link
-            to="/patients"
-            className="inline-flex items-center gap-2 rounded-2xl border border-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/5"
-          >
+          <Link to="/patients" className="secondary-action">
             <ArrowLeft size={16} />
             Back to Patients
           </Link>
@@ -103,8 +100,12 @@ export default function PatientDetailPage() {
                 <p className="mt-3 text-lg font-semibold text-white">{baselineSpo2}%</p>
               </div>
               <div className="metric-card">
-                <p className="text-xs uppercase tracking-[0.18em] text-slate-500">Current Temperature</p>
-                <p className="mt-3 text-lg font-semibold text-white">{patient.current.temperature}°C</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+                  Current Temperature
+                </p>
+                <p className="mt-3 text-lg font-semibold text-white">
+                  {patient.current.temperature}&deg;C
+                </p>
               </div>
             </div>
           </div>

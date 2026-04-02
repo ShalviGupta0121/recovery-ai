@@ -12,10 +12,7 @@ export default function ForecastPanel({ forecast }) {
 
       <div className="mt-5 grid grid-cols-2 gap-3">
         {forecast.map((entry) => (
-          <div
-            key={entry.hour}
-            className="rounded-2xl border border-white/10 bg-slate-950/30 p-4"
-          >
+          <div key={entry.hour} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{entry.hour}</p>
             <span
               className={`mt-4 inline-flex rounded-full px-3 py-1 text-sm font-semibold ring-1 ${forecastToneMap[entry.risk]}`}

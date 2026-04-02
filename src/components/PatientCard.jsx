@@ -15,7 +15,7 @@ export default function PatientCard({ patient, selected, onSelect }) {
         }
       }}
       className={`glass-panel w-full p-5 text-left transition duration-200 hover:-translate-y-0.5 ${
-        selected ? "ring-1 ring-teal/60" : "ring-1 ring-transparent"
+        selected ? "ring-1 ring-teal/45" : "ring-1 ring-transparent"
       } ${patient.highlighted ? "border-white/15" : ""}`}
     >
       <div className="flex items-start justify-between gap-3">
@@ -66,7 +66,7 @@ export default function PatientCard({ patient, selected, onSelect }) {
           >
             {patient.current.temperature}
           </p>
-          <p className="text-xs text-slate-500">°C</p>
+          <p className="text-xs text-slate-500">&deg;C</p>
         </div>
       </div>
 
@@ -74,7 +74,7 @@ export default function PatientCard({ patient, selected, onSelect }) {
         <span>{patient.room}</span>
         <Link
           to={`/patients/${patient.id}`}
-          className="inline-flex items-center gap-1 text-teal"
+          className="inline-flex items-center gap-1 text-teal transition hover:text-white"
           onClick={(event) => event.stopPropagation()}
         >
           Details <ArrowUpRight size={15} />

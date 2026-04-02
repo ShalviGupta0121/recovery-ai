@@ -44,7 +44,7 @@ export default function PatientsPage() {
     <AppShell>
       <PageHeader
         title="Patients"
-        subtitle="Browse the full monitored roster, search by patient or procedure, and inspect a selected patient’s current risk state and vital trends."
+        subtitle="Browse the full monitored roster, search by patient or procedure, and inspect a selected patient's current risk state and vital trends."
         generatedAt={generatedAt}
         alertCount={alerts.length}
         search={search}
@@ -78,10 +78,7 @@ export default function PatientsPage() {
           <div className="space-y-6">
             <StatusPanel patient={selectedPatient} />
             <ForecastPanel forecast={selectedPatient.forecast} />
-            <Link
-              to={`/patients/${selectedPatient.id}`}
-              className="inline-flex items-center gap-2 rounded-2xl bg-teal px-5 py-3 text-sm font-medium text-navy transition hover:brightness-110"
-            >
+            <Link to={`/patients/${selectedPatient.id}`} className="primary-action">
               Open Full Patient Detail
             </Link>
           </div>

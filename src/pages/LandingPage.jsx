@@ -41,22 +41,19 @@ export default function LandingPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  to="/dashboard"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-teal px-6 py-3 font-medium text-navy transition hover:brightness-110"
-                >
+                <Link to="/dashboard" className="primary-action">
                   View Dashboard <ArrowRight size={18} />
                 </Link>
                 <a
                   href="#solution"
-                  className="inline-flex items-center rounded-2xl border border-white/10 px-6 py-3 font-medium text-white transition hover:bg-white/5"
+                  className="secondary-action"
                 >
                   Explore Solution
                 </a>
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-slate-950/35 p-6">
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6">
               <div className="grid gap-4">
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
                   <p className="text-sm text-slate-400">Problem</p>
@@ -64,11 +61,11 @@ export default function LandingPage() {
                     Post-surgery changes can be subtle before they become urgent.
                   </p>
                 </div>
-                <div id="solution" className="rounded-3xl border border-teal/20 bg-teal/10 p-5">
+                <div id="solution" className="rounded-3xl border border-teal/20 bg-teal/[0.08] p-5">
                   <p className="text-sm text-teal">Solution</p>
                   <p className="mt-3 text-base leading-7 text-slate-100">
-                    RecoverAI brings live telemetry, recent alert context, and simple watch rules into one
-                    dashboard so clinicians can identify concerning trends without noise.
+                    RecoverAI brings live telemetry, recent alert context, and simple watch rules
+                    into one dashboard so clinicians can identify concerning trends without noise.
                   </p>
                 </div>
               </div>
